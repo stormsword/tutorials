@@ -27,7 +27,8 @@ public class MoveScript : MonoBehaviour {
 
 	void Update() {
 		/* Play idle animation by default*/
-		
+
+		Debug.Log (animator);
 		if(animator){
 			/* Set direction character is facing */
 			animator.SetFloat ("facing_x", facing.x);
