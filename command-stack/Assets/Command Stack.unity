@@ -84,9 +84,13 @@ GameObject:
   - 4: {fileID: 150353761}
   - 212: {fileID: 150353760}
   - 95: {fileID: 150353759}
+  - 114: {fileID: 150353762}
+  - 114: {fileID: 150353763}
+  - 50: {fileID: 150353765}
+  - 61: {fileID: 150353764}
   m_Layer: 0
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,11 +140,60 @@ Transform:
   m_PrefabInternal: {fileID: 1767858044}
   m_GameObject: {fileID: 150353758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.31114411, y: -.942301929, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &150353762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150353758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f9dc3c983024ecaab75e5887ab2807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &150353763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150353758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a48531fe3e34ee1b83e815c071ef09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+--- !u!61 &150353764
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150353758}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 2, y: 2.25}
+  m_Center: {x: 0, y: 0}
+--- !u!50 &150353765
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150353758}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1692637307
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +206,7 @@ GameObject:
   - 92: {fileID: 1692637310}
   - 124: {fileID: 1692637309}
   - 81: {fileID: 1692637308}
+  - 114: {fileID: 1692637313}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -201,7 +255,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -220,11 +274,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692637307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1692637313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692637307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19a8c92113084539ba8d4eb39d6aceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: .150000006
 --- !u!1001 &1767858044
 Prefab:
   m_ObjectHideFlags: 0
@@ -234,11 +300,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.31114411
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.942301929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -263,6 +329,10 @@ Prefab:
     - target: {fileID: 400000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c677db02e50342589726ed260c1d69a, type: 2}

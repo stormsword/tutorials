@@ -8,13 +8,13 @@ AnimatorController:
   m_Name: hero
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: direction_x
+  - m_Name: movement_x
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: direction_y
+  - m_Name: movement_y
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -22,6 +22,18 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: isMoving
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: facing_x
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: facing_y
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -73,8 +85,8 @@ BlendTree:
     m_CycleOffset: 0
     m_IsAnim: 1
     m_Mirror: 0
-  m_BlendParameter: direction_x
-  m_BlendParameterY: direction_x
+  m_BlendParameter: movement_x
+  m_BlendParameterY: movement_y
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
