@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 /* EnemyScript - Controls an enemy character */
@@ -52,4 +53,9 @@ public class EnemyScript : MonoBehaviour {
 		return(Vector2.Distance(this.gameObject.transform.position, target.transform.position));
 	}
 		
+	/* OnDrawGizmos - Used to draw debugging info on the scene */
+	public void OnDrawGizmos() {
+		Gizmos.color = Color.red;	
+		Handles.Label (transform.position, commands.currentCommand.ToString());
+	}
 }
