@@ -5,6 +5,8 @@ using System.Collections;
 public class CommandScript {
 	internal GameObject character;		// The Character this stack is attached to (usually an enemy)
 
+	internal GameObject target;			// The Character targeted (usually a player)
+
 	public CommandScript(GameObject _character) {
 		this.character = _character;
 	}

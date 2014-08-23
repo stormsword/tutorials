@@ -39,8 +39,6 @@ public class MoveScript : MonoBehaviour {
 			else {
 				isMoving = false;
 			}
-			
-
 
 			/* Set direction character is facing */
 			animator.SetFloat ("facing_x", facing.x);

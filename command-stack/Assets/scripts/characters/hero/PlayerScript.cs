@@ -3,8 +3,7 @@ using System.Collections;
 
 /* PlayerScript - Handles Input from Player */
 public class PlayerScript : MonoBehaviour {
-
-	// 
+	
 	private MoveScript moveScript;
 
 	// Iniitalize our function (like a constructor)

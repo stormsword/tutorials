@@ -3,22 +3,22 @@ using System.Collections;
 
 /* EnemyScript - Controls an enemy character */
 public class EnemyScript : MonoBehaviour {
+	// Player - Search for and store the player so we can chase it
+	private GameObject player;
 
-	// Movement Script - Used to execute character behavior
-	private MoveScript moveScript;
-
-	// Command Script - Execute a command
-	CommandScript command;
+	// Chase Command Script - Charge at an enemy
+	ChaseCommandScript command;
 	
 	void Start() {
-		moveScript = GetComponent<MoveScript>();
-
-		command = new CommandScript(this.gameObject);
-		Debug.Log (command.character.name);
+		Debug.Log (this.gameObject.name);
+		command = new ChaseCommandScript(this.gameObject);
+		player = GameObject.FindGameObjectWithTag("Player");	// Make sure your player has the 'Player' tag!
+		command.target = player;
+	
 	}
 	
 	void Update() {
-		moveScript.Move (0, -1);	// Enemies should run straight down to start
+		command.Execute();
 	}
 		
 }
