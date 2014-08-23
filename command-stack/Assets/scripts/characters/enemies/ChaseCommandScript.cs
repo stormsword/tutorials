@@ -19,7 +19,6 @@ public class ChaseCommandScript : CommandScript {
 		if(target != null) {
 			direction = GetDirection(target);
 			moveScript.Move(direction);
-			Debug.Log (moveScript.gameObject.name);
 		}
 	}
 	

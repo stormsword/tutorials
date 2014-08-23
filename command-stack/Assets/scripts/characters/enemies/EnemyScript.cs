@@ -18,16 +18,34 @@ public class EnemyScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");	// Make sure your player has the 'Player' tag!
 		// Create stack of commands for AI behavior
 		commands = new CommandStackScript();
-	
 	}
 	
 	void Update() {
-		playerDistance = GetDistance(player);
+		playerDistance = GetDistance(player);	// How far away is the enemy from the player?
 
-		if (playerDistance >= aggroRadius) {
-			// Chase the player
-//			command.Execute();
+		if (playerDistance <= aggroRadius) {
+			// When player comes close, chase him/her
+			Chase();
 		}
+		else {
+			// Otherwise just wander around
+			Wander();
+		}
+
+		commands.Execute();
+	}
+
+	/* Chase - Pushes a 'Chase' command onto the stack */
+	private void Chase() {
+		ChaseCommandScript command = new ChaseCommandScript(this.gameObject);	// Temporary command - move to a random spot
+		command.target = player;		// Grab and target player
+		commands.Add(command);			// Command will be executed next frame
+	}
+
+	/* Wander - Pushes a 'Wander' command onto the stack */
+	private void Wander() {
+		WanderCommandScript command = new WanderCommandScript(this.gameObject);
+		commands.Add(command);
 	}
 
 	private float GetDistance(GameObject target) {
